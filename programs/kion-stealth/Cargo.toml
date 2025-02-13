@@ -1,0 +1,31 @@
+[package]
+name = "kion-stealth"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+name = "kion_stealth"
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+solana-program = "1.16.24"
+
+# The following crates are used for cryptography, random number generation,
+# big-integer arithmetic, and hex conversion in the on-chain code:
+secp256k1 = "0.27.0"
+rand = "0.8.5"
+num-bigint = "0.4.3"
+hex = "0.4.3"
+
+[dev-dependencies]
+# (Optional) If you want to use Anchor’s test utilities in Rust for local integration tests:
+anchor-test = "0.29.0"
